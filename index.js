@@ -1,5 +1,7 @@
 /*🏋️‍♂️🏋️‍♂️🏋️‍♂️🏋️‍♂️🏋️‍♂️🏋️‍♂️🏋️‍♂️🏋️‍♂️🏋️‍♂️ Task 1: Warm-up! 🏋️‍♂️🏋️‍♂️🏋️‍♂️🏋️‍♂️🏋️‍♂️🏋️‍♂️🏋️‍♂️🏋️‍♂️🏋️‍♂️*/
 
+import { parse } from "@babel/core";
+
 /*MAKE SURE TO RETURN ALL OF THE ANSWERS ON THESE TASKS, IF YOU DON'T, THE AUTOGRADER WILL NOT WORK*/
 
 /*
@@ -17,6 +19,11 @@ Do the following:
 
    HINT: no function required
 */
+let votingAge = 18;
+
+if (votingAge === 18) {
+  console.log("true");
+}
 
 
 
@@ -30,7 +37,14 @@ Do the following:
 
    HINT: no function required
 */
+let cost = 4.99;
+let tax = 0.06;
 
+if (cost === 4.99) {
+  console.log(cost + tax);
+} else {
+  console.log(4.99);
+}
 
 
 
@@ -46,6 +60,8 @@ Do the following:
    HINT: look up the Number method
 */
 
+let placeValue = "1999";
+console.log(+placeValue);
 
 
 
@@ -58,10 +74,11 @@ Do the following:
    3. Multiply a and b and return the answer
 */
 
-function multiply(/*add your code here*/){
-    /*add your code here*/
-  }
-
+function multiply(a, b){
+  let answer = a * b;
+  return answer;
+}
+  multiply(5, 5);
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 2 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
@@ -74,9 +91,11 @@ Do the following:
    3. Return the newly calculated age
 */
 
-function dogYears(/*add your code here*/){
-    /*add your code here*/
+function dogYears(age){
+  let dogAge = 7 * age;
+  return dogAge;
 }
+dogYears(5);
 
 
 
@@ -107,9 +126,8 @@ Use the hungryDog function and feeding requirements below to do the following:
   NOTE: If done correctly, a weight of 15 lbs and age of 1 year would return 0.44999999999999996
 */  
 
-function hungryDog(/*add your code here*/){
-    /*add your code here*/
-  }
+function hungryDog(lbs, age){
+}
 
 
 
@@ -134,8 +152,9 @@ Use the game function below to do the following:
   HINT: Remember that the order in which we pass in our arguments matters when it comes to parameters
 */
 
+
 function game(user, computer){
-    /*add your code here*/
+
 }
   
   
@@ -151,9 +170,12 @@ Using the miles function below do the following:
   3. Return the number of miles
 */
 
-function miles(/*add your code here*/){
-    /*add your code here*/
+function miles(kilometer){
+    let distance = kilometer * 0.621371;
+     return distance;
   }
+  miles(10);
+
 
 
 
@@ -165,9 +187,11 @@ Using the feet function below do the following:
   3. Return number of feet
 */
 
-function feet(/*add your code here*/){
-    /*add your code here*/
+function feet(cm){
+    let measurement = cm / 30.48
+    return measurement;
   }
+  feet(5);
  
 
 
