@@ -1,5 +1,7 @@
 /*🏋️‍♂️🏋️‍♂️🏋️‍♂️🏋️‍♂️🏋️‍♂️🏋️‍♂️🏋️‍♂️🏋️‍♂️🏋️‍♂️ Task 1: Warm-up! 🏋️‍♂️🏋️‍♂️🏋️‍♂️🏋️‍♂️🏋️‍♂️🏋️‍♂️🏋️‍♂️🏋️‍♂️🏋️‍♂️*/
 
+import { parse } from "@babel/core";
+
 /*MAKE SURE TO RETURN ALL OF THE ANSWERS ON THESE TASKS, IF YOU DON'T, THE AUTOGRADER WILL NOT WORK*/
 
 /*
@@ -17,6 +19,11 @@ Do the following:
 
    HINT: no function required
 */
+let votingAge = 18;
+
+if (votingAge === 18) {
+  console.log("true");
+}
 
 
 
@@ -30,7 +37,14 @@ Do the following:
 
    HINT: no function required
 */
+let cost = 4.99;
+let tax = 0.06;
 
+if (cost === 4.99) {
+  console.log(cost + tax);
+} else {
+  console.log(4.99);
+}
 
 
 
@@ -46,6 +60,8 @@ Do the following:
    HINT: look up the Number method
 */
 
+let placeValue = "1999";
+console.log(+placeValue);
 
 
 
@@ -58,10 +74,11 @@ Do the following:
    3. Multiply a and b and return the answer
 */
 
-function multiply(/*add your code here*/){
-    /*add your code here*/
-  }
-
+function multiply(a, b){
+  let answer = a * b;
+  return answer;
+}
+  multiply(5, 5);
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 2 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
@@ -74,9 +91,11 @@ Do the following:
    3. Return the newly calculated age
 */
 
-function dogYears(/*add your code here*/){
-    /*add your code here*/
+function dogYears(age){
+  let dogAge = 7 * age;
+  return dogAge;
 }
+dogYears(5);
 
 
 
@@ -107,10 +126,25 @@ Use the hungryDog function and feeding requirements below to do the following:
   NOTE: If done correctly, a weight of 15 lbs and age of 1 year would return 0.44999999999999996
 */  
 
-function hungryDog(/*add your code here*/){
-    /*add your code here*/
+function hungryDog(lbs, years){
+  if(years < 1){
+    if(year >= 0.583)
+    return(0.04 * years);
+  } else if(years >= 0.333 && years <= 0.583) {
+    return(0.05 * years)
+  } else if(years >= 0.166 && years <= 0.333) {
+    return(0.10 * years)
+  }else if(years >= 1 && lbs > 15) {
+    return(0.02 * lbs)
+  } else if(lbs >= 11 && lbs <=15) {
+    return(0.03 * lbs)
+  } else if(lbs >= 6 && lbs <=10) {
+    return(0.04 * lbs)
+  }else if(lbs >= 5) {
+    return(0.05 * lbs)
   }
-
+}
+hungryDog(15, 1);
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 4 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
@@ -133,12 +167,35 @@ Use the game function below to do the following:
   
   HINT: Remember that the order in which we pass in our arguments matters when it comes to parameters
 */
-
 function game(user, computer){
-    /*add your code here*/
+  let gameChoice = Math.random();
+  let userChoice = prompt("Please choose rock, paper, or scissors?");
+  
+  if(gameChoice < 0.25 && userChoice === "rock") {
+  return gameChoice = "It's a tie";
+  }else if (gameChoice <= 0.50 && gameChoice > 0.25 && userChoice === "rock") {
+  return "You Lose";
+  }else if (gameChoice > 0.50 && gameChoice <= 1.00 && userChoice === "rock") {
+  return "You win";
+  }else if(gameChoice < 0.25 && userChoice === "paper") {
+  return "You win";
+}else if(gameChoice <= 0.50 && gameChoice > 0.25 && userChoice === "paper") {
+  return "It's a tie";
+}else if(gameChoice > 0.50 && gameChoice <= 1.00 && userChoice === "paper") {
+   return "You lose!";
+}else if(gameChoice < 0.25 && userChoice === "scissors") {
+   return "You lose!";
+}else if(gameChoice <= 0.50 && gameChoice > 0.25 && userChoice === "scissors") {
+   return "You win!";
+}else if(gameChoice > 0.50 && gameChoice <= 1.00 && userChoice === "scissors") {
+   return "It's a tie";
+} 
 }
-  
-  
+
+game()
+    
+
+
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
 
@@ -151,9 +208,12 @@ Using the miles function below do the following:
   3. Return the number of miles
 */
 
-function miles(/*add your code here*/){
-    /*add your code here*/
+function miles(kilometer){
+    let distance = kilometer * 0.621371;
+     return distance;
   }
+  miles(10);
+
 
 
 
@@ -165,9 +225,11 @@ Using the feet function below do the following:
   3. Return number of feet
 */
 
-function feet(/*add your code here*/){
-    /*add your code here*/
+function feet(cm){
+    let measurement = cm / 30.48
+    return measurement;
   }
+  feet(5);
  
 
 
@@ -180,10 +242,13 @@ Using the annoyingSong function below do the following:
   2. At each invocation, it should RETURN this string (note: the tests are expecting the same string as below):
       "{number} bottles of soda on the wall, {number} bottles of soda, take one down pass it around {number left over} bottles of soda on the wall"
 */
+let bottles = 99;
 
-function annoyingSong(/*add your code here*/){
-        /*add your code here*/
+  while(bottles >= 1) {
+      console.log(`${bottles} bottles of soda on the wall, ${bottles} bottles of soda, take one down pass it around ${bottles - 1} bottles of soda on the wall`);
+      bottles--
   }
+  
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
@@ -201,11 +266,22 @@ Using the grade function below do the following:
    below should return 'you got an F'
 */
   
-function grade(/*Your Code here */){
-  /*Your Code here */
+function grade(score){
+  if(score > 90 ) {
+    return "You got an A";
+  }else if (score >= 80 && score <= 89) {
+    return "You got a B";
+  }else if(score <= 79 && score >= 70) {
+    return "You got a C";
+  }else if(score <= 69 && score >= 60) {
+    return "You got a D";
+  }else if(score < 60) {
+    return "You got an F";
+  }
   }
   
-  
+  grade(85);
+
 
 /*💪💪💪💪💪💪💪💪💪💪 Stretch 💪💪💪💪💪💪💪💪💪💪*/
 
