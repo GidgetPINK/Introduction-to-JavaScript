@@ -126,9 +126,25 @@ Use the hungryDog function and feeding requirements below to do the following:
   NOTE: If done correctly, a weight of 15 lbs and age of 1 year would return 0.44999999999999996
 */  
 
-function hungryDog(lbs, age){
+function hungryDog(lbs, years){
+  if(years < 1){
+    if(year >= 0.583)
+    return(0.04 * years);
+  } else if(years >= 0.333 && years <= 0.583) {
+    return(0.05 * years)
+  } else if(years >= 0.166 && years <= 0.333) {
+    return(0.10 * years)
+  }else if(years >= 1 && lbs > 15) {
+    return(0.02 * lbs)
+  } else if(lbs >= 11 && lbs <=15) {
+    return(0.03 * lbs)
+  } else if(lbs >= 6 && lbs <=10) {
+    return(0.04 * lbs)
+  }else if(lbs >= 5) {
+    return(0.05 * lbs)
+  }
 }
-
+hungryDog(15, 1);
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 4 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
@@ -154,9 +170,7 @@ Use the game function below to do the following:
 
 
 function game(user, computer){
-
 }
-  
   
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
@@ -204,10 +218,13 @@ Using the annoyingSong function below do the following:
   2. At each invocation, it should RETURN this string (note: the tests are expecting the same string as below):
       "{number} bottles of soda on the wall, {number} bottles of soda, take one down pass it around {number left over} bottles of soda on the wall"
 */
+let bottles = 99;
 
-function annoyingSong(/*add your code here*/){
-        /*add your code here*/
+  while(bottles >= 1) {
+      console.log(`${bottles} bottles of soda on the wall, ${bottles} bottles of soda, take one down pass it around ${bottles - 1} bottles of soda on the wall`);
+      bottles--
   }
+  
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
@@ -225,7 +242,7 @@ Using the grade function below do the following:
    below should return 'you got an F'
 */
   
-function grade(/*Your Code here */){
+function grade(percentage){
   /*Your Code here */
   }
   
