@@ -167,11 +167,35 @@ Use the game function below to do the following:
   
   HINT: Remember that the order in which we pass in our arguments matters when it comes to parameters
 */
-
-
 function game(user, computer){
-}
+  let gameChoice = Math.random();
+  let userChoice = prompt("Please choose rock, paper, or scissors?");
   
+  if(gameChoice < 0.25 && userChoice === "rock") {
+  return gameChoice = "It's a tie";
+  }else if (gameChoice <= 0.50 && gameChoice > 0.25 && userChoice === "rock") {
+  return "You Lose";
+  }else if (gameChoice > 0.50 && gameChoice <= 1.00 && userChoice === "rock") {
+  return "You win";
+  }else if(gameChoice < 0.25 && userChoice === "paper") {
+  return "You win";
+}else if(gameChoice <= 0.50 && gameChoice > 0.25 && userChoice === "paper") {
+  return "It's a tie";
+}else if(gameChoice > 0.50 && gameChoice <= 1.00 && userChoice === "paper") {
+   return "You lose!";
+}else if(gameChoice < 0.25 && userChoice === "scissors") {
+   return "You lose!";
+}else if(gameChoice <= 0.50 && gameChoice > 0.25 && userChoice === "scissors") {
+   return "You win!";
+}else if(gameChoice > 0.50 && gameChoice <= 1.00 && userChoice === "scissors") {
+   return "It's a tie";
+} 
+}
+
+game()
+    
+
+
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
 
@@ -242,11 +266,22 @@ Using the grade function below do the following:
    below should return 'you got an F'
 */
   
-function grade(percentage){
-  /*Your Code here */
+function grade(score){
+  if(score > 90 ) {
+    return "You got an A";
+  }else if (score >= 80 && score <= 89) {
+    return "You got a B";
+  }else if(score <= 79 && score >= 70) {
+    return "You got a C";
+  }else if(score <= 69 && score >= 60) {
+    return "You got a D";
+  }else if(score < 60) {
+    return "You got an F";
+  }
   }
   
-  
+  grade(85);
+
 
 /*💪💪💪💪💪💪💪💪💪💪 Stretch 💪💪💪💪💪💪💪💪💪💪*/
 
